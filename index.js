@@ -14,6 +14,8 @@ var buttonAdd = document.getElementById("button_add");
 var buttonSub = document.getElementById("button_sub");
 var buttonMul = document.getElementById("button_mul");
 var buttonDiv = document.getElementById("button_div");
+var buttonLeftBracket = document.getElementById("button_leftBracket");
+var buttonRightBracket = document.getElementById("button_rightBracket");
 var buttonCalc = document.getElementById("button_calc");
 
 // getting the user input text-box
@@ -60,6 +62,26 @@ buttonDiv.addEventListener("click", function(){
 	if(textbox.value.length < 30)
 	{
 		textbox.value += "/";
+	}
+	else
+		alert("Input out of range!");
+});
+
+// left bracket button event
+buttonLeftBracket.addEventListener("click", function(){
+	if(textbox.value.length < 30)
+	{
+		textbox.value += "(";
+	}
+	else
+		alert("Input out of range!");
+});
+
+// right bracket button event
+buttonRightBracket.addEventListener("click", function(){
+	if(textbox.value.length < 30)
+	{
+		textbox.value += ")";
 	}
 	else
 		alert("Input out of range!");
@@ -170,7 +192,7 @@ body.addEventListener("keydown", function(){
 	{
 		textbox.value = "";
 	}
-	else if((event.key.charCodeAt() >= "1".charCodeAt() && event.key.charCodeAt() <= "9".charCodeAt()) || event.key.charCodeAt() == "+".charCodeAt() || event.key.charCodeAt() == "-".charCodeAt() || event.key.charCodeAt() == "*".charCodeAt() || event.key.charCodeAt() == "/".charCodeAt())
+	else if((event.key.charCodeAt() >= "1".charCodeAt() && event.key.charCodeAt() <= "9".charCodeAt()) || event.key.charCodeAt() == "+".charCodeAt() || event.key.charCodeAt() == "-".charCodeAt() || event.key.charCodeAt() == "*".charCodeAt() || event.key.charCodeAt() == "/".charCodeAt() || event.key.charCodeAt() == "(".charCodeAt() || event.key.charCodeAt() == ")".charCodeAt() || event.key.charCodeAt() == "0".charCodeAt())
 	{
 		if(textbox.value.length < 30)
 		{
